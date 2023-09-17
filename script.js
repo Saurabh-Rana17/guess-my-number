@@ -14,8 +14,18 @@ let score = 20;
 let highscore = 0;
 let gameon = true;
 console.log(random);
-
-document.querySelector(".check").addEventListener("click", () => {
+let handleAgain = () => {
+  random = Math.trunc(Math.random() * 20) + 1;
+  console.log(random);
+  score = 20;
+  gameon = true;
+  document.querySelector(".number").textContent = "?";
+  document.querySelector(".guess").value = "";
+  document.querySelector(".score").textContent = 20;
+  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector(".number").style.width = "15rem";
+};
+let handleCheck = () => {
   if (gameon) {
     if (score === 0) {
       alert("game over");
@@ -54,15 +64,7 @@ document.querySelector(".check").addEventListener("click", () => {
   } else {
     alert("please start a new game");
   }
-});
-document.querySelector(".again").addEventListener("click", () => {
-  random = Math.trunc(Math.random() * 20) + 1;
-  console.log(random);
-  score = 20;
-  gameon = true;
-  document.querySelector(".number").textContent = "?";
-  document.querySelector(".guess").value = "";
-  document.querySelector(".score").textContent = 20;
-  document.querySelector("body").style.backgroundColor = "#222";
-  document.querySelector(".number").style.width = "15rem";
-});
+};
+
+document.querySelector(".check").addEventListener("click", handleCheck);
+document.querySelector(".again").addEventListener("click", handleAgain);
