@@ -37,7 +37,7 @@ document.querySelector(".check").addEventListener("click", () => {
         document.querySelector(".highscore").textContent = highscore;
         document.querySelector(".number").style.width = "30rem";
       }
-      document.querySelector("body").style.backgroundColor = "green";
+      document.querySelector("body").style.backgroundColor = "#60b347";
       document.querySelector(".number").textContent = random;
       document.querySelector(".message").textContent = "correct answer found";
       gameon = false;
@@ -63,6 +63,6 @@ document.querySelector(".again").addEventListener("click", () => {
   document.querySelector(".number").textContent = "?";
   document.querySelector(".guess").value = "";
   document.querySelector(".score").textContent = 20;
-  document.querySelector("body").style.backgroundColor = "black";
+  document.querySelector("body").style.backgroundColor = "#222";
   document.querySelector(".number").style.width = "15rem";
 });
